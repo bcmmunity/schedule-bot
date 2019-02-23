@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelegrammAspMvcDotNetCoreBot", "TelegrammAspMvcDotNetCoreBot\TelegrammAspMvcDotNetCoreBot.csproj", "{4279BEDB-47F7-4717-9764-D4145889A20E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelegrammAspMvcDotNetCoreBot - Web", "TelegrammAspMvcDotNetCoreBot\TelegrammAspMvcDotNetCoreBot - Web.csproj", "{4279BEDB-47F7-4717-9764-D4145889A20E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelegrammAppMvcDotNetCore - Buisness Logic", "TelegrammAppMvcDotNetCore - Buisness Logic\TelegrammAppMvcDotNetCore - Buisness Logic.csproj", "{06AD48F3-6CBB-491F-A98A-3F41785AAEBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{4279BEDB-47F7-4717-9764-D4145889A20E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4279BEDB-47F7-4717-9764-D4145889A20E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4279BEDB-47F7-4717-9764-D4145889A20E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06AD48F3-6CBB-491F-A98A-3F41785AAEBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06AD48F3-6CBB-491F-A98A-3F41785AAEBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06AD48F3-6CBB-491F-A98A-3F41785AAEBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06AD48F3-6CBB-491F-A98A-3F41785AAEBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

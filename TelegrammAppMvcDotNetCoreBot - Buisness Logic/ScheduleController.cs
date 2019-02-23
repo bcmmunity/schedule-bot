@@ -3,12 +3,9 @@ using System.Xml.Linq;
 using System.Linq;
 using System.Collections.Generic;
 using System.IO;
-using TelegrammAspMvcDotNetCoreBot.Models.ScheduleExceptions.DoesntExists;
 using TelegrammAspMvcDotNetCoreBot.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.AspNetCore.Mvc;
+
 
 namespace TelegrammAspMvcDotNetCoreBot.Controllers
 {

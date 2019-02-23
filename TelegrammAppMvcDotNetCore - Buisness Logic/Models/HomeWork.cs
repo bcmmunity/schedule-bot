@@ -1,4 +1,4 @@
-namespace TelegrammAspMvcDotNetCoreBot.Models
+﻿namespace TelegrammAppMvcDotNetCore___Buisness_Logic.Models
 {
     public class HomeWork
     {

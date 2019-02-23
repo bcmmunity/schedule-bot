@@ -1,24 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.IO;
+﻿using System.IO;
 using System.Net;
 using System.Text;
-using TelegrammAspMvcDotNetCoreBot.Controllers;
-using TelegrammAspMvcDotNetCoreBot.Models;
-using DocumentFormat.OpenXml.Spreadsheet;
-using Microsoft;
 
-namespace TelegrammAspMvcDotNetCoreBot.Controllers
+namespace TelegrammAppMvcDotNetCore___Buisness_Logic
 {
-	public static class ScheduleUpdateController
+	public static class ScheduleUpdate
 	{
 		//тест
 		public static void Update()
 		{
 
-			UserController.CheckDoc();
+			new UserOperation().CheckDoc();
 			//Download("http://misis.ru/files/-/b4052b5047b2fc91dc690229330036d2/%D0%98%D0%A2%D0%90%D0%A1%D0%A3.xls", "ИТАСУ");
 			//Download("http://misis.ru/files/-/06c06d68c54dbf107f8b4de7361dd909/%D0%9C%D0%93%D0%98.xlsx", "МГИ");
 			//Download("http://misis.ru/files/-/d2af8541a9ded82879ef11c1e11d3d7a/%D0%98%D0%9D%D0%9C%D0%B8%D0%9D.xlsx", "ИНМиН");
@@ -33,7 +25,7 @@ namespace TelegrammAspMvcDotNetCoreBot.Controllers
 
 		}
 
-		static string GetResponse(string uri)
+	    static string GetResponse(string uri)
 		{
 			StringBuilder sb = new StringBuilder();
 			byte[] buf = new byte[8192];
@@ -43,8 +35,8 @@ namespace TelegrammAspMvcDotNetCoreBot.Controllers
 			int count = 0;
 			do
 			{
-				count = resStream.Read(buf, 0, buf.Length);
-				if (count != 0)
+			    if (resStream != null) count = resStream.Read(buf, 0, buf.Length);
+			    if (count != 0)
 				{
 					sb.Append(Encoding.Default.GetString(buf, 0, count));
 				}
@@ -61,12 +53,12 @@ namespace TelegrammAspMvcDotNetCoreBot.Controllers
 			if (url[url.Length - 1] == 'x')
 			{
 				wc.DownloadFile(url, name + ".xlsx");
-				ExcelParserController.ReadXlsx(name);
+				ExcelParser.ReadXlsx(name);
 			}
 			else
 			{
 				wc.DownloadFile(url, name + ".xls");
-				ExcelParserController.ReadXls(name);
+				ExcelParser.ReadXls(name);
 			}
 
 		}

@@ -1,34 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Telegram.Bot;
 using TelegrammAspMvcDotNetCoreBot.Models.Commands;
 
 namespace TelegrammAspMvcDotNetCoreBot.Models
 {
-    public class Bot
+    public static class Bot
     {
-        private static TelegramBotClient botClient;
-        private static List<Command> commandsList;
+        private static TelegramBotClient _botClient;
+        private static List<Command> _commandsList;
 
-        public static IReadOnlyList<Command> Commands => commandsList.AsReadOnly();
+        public static IReadOnlyList<Command> Commands => _commandsList.AsReadOnly();
 
         public static async Task<TelegramBotClient> GetBotClientAsync()
         {
-            if (botClient != null)
+            if (_botClient != null)
             {
-                return botClient;
+                return _botClient;
             }
 
-            commandsList = new List<Command>();
-            commandsList.Add(new StartCommand());
+            _commandsList = new List<Command>();
+            _commandsList.Add(new StartCommand());
             //TODO: Add more commands
 
-            botClient = new TelegramBotClient(AppSettings.Key);
+            _botClient = new TelegramBotClient(AppSettings.Key);
             string hook = string.Format(AppSettings.Url, "api/message/update");
-            await botClient.SetWebhookAsync(hook);
-            return botClient;
+            await _botClient.SetWebhookAsync(hook);
+            return _botClient;
         }
     }
 }
